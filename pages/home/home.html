@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Daily Calorie Intake Calculator</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-item>
+  <ion-label>Sex: </ion-label>
+  <ion-select interface="popover" [(ngModel)]="sex">
+    <ion-option value="m">Male</ion-option>
+    <ion-option value="f">Female</ion-option>
+  </ion-select>
+</ion-item>
+
+<ion-item>
+  <ion-label>Age: </ion-label>
+  <ion-input type="number" [(ngModel)]="age"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Height in Meters: </ion-label>
+  <ion-input type="number" [(ngModel)]="height"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Weight in Kilograms: </ion-label>
+  <ion-input type="number" [(ngModel)]="weight"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Activity Level: </ion-label>
+  <ion-select interface="popover" [(ngModel)]="actlev">
+    <ion-option value="al0">Little/No Exercise</ion-option>
+    <ion-option value="al12">Exercise 1-2x /week</ion-option>
+    <ion-option value="al23">Exercise 2-3x /week</ion-option>
+    <ion-option value="al35">Exercise 3-5x /week</ion-option>
+    <ion-option value="al67">Exercise 6-7x /week</ion-option>
+    <ion-option value="alpro">Professional Athlete</ion-option>
+  </ion-select>
+</ion-item>
+
+<button ion-button color="secondary" (click)="calculateBMR()">CALCULATE</button>
+
+<ion-item *ngIf="bmr">
+  <h2>Your Daily Calorie Intake Is: {{cal}} 
+  
+  
+
